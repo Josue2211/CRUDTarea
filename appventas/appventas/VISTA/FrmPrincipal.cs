@@ -53,5 +53,13 @@ namespace appventas.VISTA
             frm.Show();
             this.Close();
         }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Haz entrado");
+            FrmUsuario frm = new FrmUsuario();
+            frm.Show();
+            this.Close();
+        }
     }
 }

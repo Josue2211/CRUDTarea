@@ -64,6 +64,7 @@ namespace appventas.VISTA
             this.btnUser.TabIndex = 2;
             this.btnUser.Text = "Tb Usuario";
             this.btnUser.UseVisualStyleBackColor = true;
+            this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
             // 
             // btnProduc
             // 
