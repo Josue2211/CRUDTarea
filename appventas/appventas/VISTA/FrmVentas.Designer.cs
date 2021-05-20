@@ -34,6 +34,11 @@ namespace appventas.VISTA
             this.lblCliente = new System.Windows.Forms.Label();
             this.txtNombreDoc = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblBuscarPro = new System.Windows.Forms.Label();
             this.txtBuscarPro = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -87,11 +92,50 @@ namespace appventas.VISTA
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
             this.dataGridView1.Location = new System.Drawing.Point(15, 359);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(803, 207);
             this.dataGridView1.TabIndex = 6;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Codigo";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Nombre";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Precio";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Cantidad";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Total";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // lblBuscarPro
             // 
@@ -117,6 +161,7 @@ namespace appventas.VISTA
             this.btnBuscar.TabIndex = 9;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // lblCodigoProd
             // 
@@ -223,6 +268,7 @@ namespace appventas.VISTA
             this.Controls.Add(this.lblNombreDoc);
             this.Name = "FrmVentas";
             this.Text = "FrmVentas";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -245,10 +291,15 @@ namespace appventas.VISTA
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.TextBox txtNombreProd;
-        private System.Windows.Forms.TextBox txtCodigoProd;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        public System.Windows.Forms.TextBox txtPrecio;
+        public System.Windows.Forms.TextBox txtNombreProd;
+        public System.Windows.Forms.TextBox txtCodigoProd;
     }
 }

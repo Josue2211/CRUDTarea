@@ -34,18 +34,19 @@ namespace appventas.VISTA
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dtgProducto = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.txtNombrePro = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblEstadoP = new System.Windows.Forms.Label();
             this.lblPrecioP = new System.Windows.Forms.Label();
             this.lblNombrePro = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtNombreP = new System.Windows.Forms.TextBox();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProducto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,6 +104,26 @@ namespace appventas.VISTA
             this.dtgProducto.TabIndex = 21;
             this.dtgProducto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProducto_CellContentClick);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Producto";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Precio";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Estado";
+            this.Column4.Name = "Column4";
+            // 
             // txtEstado
             // 
             this.txtEstado.Location = new System.Drawing.Point(221, 158);
@@ -116,13 +137,6 @@ namespace appventas.VISTA
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(219, 20);
             this.txtPrecio.TabIndex = 19;
-            // 
-            // txtNombrePro
-            // 
-            this.txtNombrePro.Location = new System.Drawing.Point(221, 59);
-            this.txtNombrePro.Name = "txtNombrePro";
-            this.txtNombrePro.Size = new System.Drawing.Size(219, 20);
-            this.txtNombrePro.TabIndex = 18;
             // 
             // txtID
             // 
@@ -167,31 +181,28 @@ namespace appventas.VISTA
             this.lblID.TabIndex = 13;
             this.lblID.Text = "ID";
             // 
-            // Column1
+            // txtNombreP
             // 
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
+            this.txtNombreP.Location = new System.Drawing.Point(221, 66);
+            this.txtNombreP.Name = "txtNombreP";
+            this.txtNombreP.Size = new System.Drawing.Size(219, 20);
+            this.txtNombreP.TabIndex = 26;
+            this.txtNombreP.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // Column2
+            // txtFiltro
             // 
-            this.Column2.HeaderText = "Producto";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Precio";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Estado";
-            this.Column4.Name = "Column4";
+            this.txtFiltro.Location = new System.Drawing.Point(537, 12);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(219, 20);
+            this.txtFiltro.TabIndex = 27;
             // 
             // FrmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 507);
+            this.Controls.Add(this.txtFiltro);
+            this.Controls.Add(this.txtNombreP);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
@@ -199,7 +210,6 @@ namespace appventas.VISTA
             this.Controls.Add(this.dtgProducto);
             this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.txtPrecio);
-            this.Controls.Add(this.txtNombrePro);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lblEstadoP);
             this.Controls.Add(this.lblPrecioP);
@@ -233,5 +243,7 @@ namespace appventas.VISTA
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.TextBox txtNombreP;
+        private System.Windows.Forms.TextBox txtFiltro;
     }
 }

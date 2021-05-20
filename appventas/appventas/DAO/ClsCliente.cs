@@ -13,7 +13,7 @@ namespace appventas.DAO
 
         public List<tb_cliente> cargarDatosCliente()
         {
-            List<tb_cliente> Lista;
+            List<tb_cliente> Lista ;
 
             using (sistema_ventasEntities sv = new sistema_ventasEntities())
             {
@@ -92,8 +92,12 @@ namespace appventas.DAO
             {
                 MessageBox.Show(EX.ToString());
             }
-
         }
+        //public List<tb_cliente> cargarComboCliente()
+        //{
+
+        //}
+
     }
 }
 

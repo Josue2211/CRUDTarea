@@ -23,7 +23,7 @@ namespace appventas.VISTA
         void Clear()
         {
             txtID.Clear();
-            txtNombrePro.Clear();
+            txtNombreP.Clear();
             txtPrecio.Clear();
             txtEstado.Clear();
         }
@@ -38,18 +38,19 @@ namespace appventas.VISTA
             {
                 dtgProducto.Rows.Add(iteraction.idProducto, iteraction.nombreProducto, iteraction.precioProducto, iteraction.estadoProducto);
             }
-        }
+        
+    }
 
         private void FrmProducto_Load(object sender, EventArgs e)
         {
-
+            Carga();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             ClsProducto clsPro = new ClsProducto();
             tb_producto tp = new tb_producto();
-            tp.nombreProducto = txtNombrePro.Text;
+            tp.nombreProducto = txtNombreP.Text;
             tp.precioProducto = txtPrecio.Text;
             tp.estadoProducto = txtEstado.Text;
             clsPro.SaveDatosClient(tp);
@@ -68,7 +69,7 @@ namespace appventas.VISTA
             String Estado = dtgProducto.CurrentRow.Cells[3].Value.ToString();
 
             txtID.Text = ID;
-            txtNombrePro.Text = Producto;
+            txtNombreP.Text = Producto;
             txtPrecio.Text = Precio;
             txtEstado.Text = Estado;
         }
@@ -88,7 +89,7 @@ namespace appventas.VISTA
 
             tb_producto tp = new tb_producto();
             tp.idProducto = Convert.ToInt32(txtID.Text);
-            tp.nombreProducto = txtNombrePro.Text;
+            tp.nombreProducto = txtNombreP.Text;
             tp.precioProducto = txtPrecio.Text;
             tp.estadoProducto = txtEstado.Text;
             clsCliente.UpdatePro(tp);
@@ -99,6 +100,10 @@ namespace appventas.VISTA
             }
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
  
