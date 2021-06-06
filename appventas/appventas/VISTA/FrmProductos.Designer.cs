@@ -52,7 +52,9 @@ namespace appventas.VISTA
             this.dtgProductos.Name = "dtgProductos";
             this.dtgProductos.Size = new System.Drawing.Size(669, 179);
             this.dtgProductos.TabIndex = 22;
-            this.dtgProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProductos_CellContentClick);
+
+            this.dtgProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProductos_CellDoubleClick);
+            this.dtgProductos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtgProductos_KeyDown);
             // 
             // Column1
             // 

@@ -42,7 +42,8 @@ namespace appventas.VISTA
             cargarDatos();
         }
 
-        private void dtgProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+ 
+        void envio()
         {
             String ID = dtgProductos.CurrentRow.Cells[0].Value.ToString();
             String Nombre = dtgProductos.CurrentRow.Cells[1].Value.ToString();
@@ -56,8 +57,21 @@ namespace appventas.VISTA
             FrmMenuVenta.frmVenta.txtCodigoProd.Text = ID;
             FrmMenuVenta.frmVenta.txtNombreProd.Text = Nombre;
             FrmMenuVenta.frmVenta.txtPrecio.Text = Precio;
+            FrmMenuVenta.frmVenta.txtCantidad.Focus();
 
             this.Close();
+        }
+
+        private void dtgProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            envio();
+        }
+
+        private void dtgProductos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) {
+                envio();
+            }
         }
     }
 }
